@@ -1,5 +1,3 @@
-// --- KONTROLA IHNED NA ZAČÁTKU SOUBORU ---
-// Zjistíme, jestli tělo obsahuje třídu 'easter-body'.
 if (document.body && document.body.classList.contains("easter-body")) {
   // Pokud je to Easter Egg stránka, skript se zde ukončí.
   throw new Error("Skript se na Easter Egg stránce nespustí.");
@@ -7,11 +5,6 @@ if (document.body && document.body.classList.contains("easter-body")) {
 // ------------------------------------------
 
 document.addEventListener("DOMContentLoaded", () => {
-  // =========================================================
-  // === 1. PARALLAX KÓD PRO DETAIL PROJEKTU (ODSTRANĚN) ===
-  // =========================================================
-  /* Původní kód pro Parallax zde byl odstraněn. */
-
   // =======================================
   // === 2. LIGHTBOX / MODAL FUNKCIONALITA ===
   // =======================================

@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
 
-/* --- Global - ZAJIŠTĚNÍ PROTI HORIZONTÁLNÍMU ROLOVÁNÍ --- */
 html,
 body {
   overflow-x: hidden;
@@ -15,7 +14,6 @@ body {
   position: relative;
 }
 
-/* --- Navigation (Bublinky, Top-Left) --- */
 .nav {
   display: flex;
   flex-wrap: nowrap;
@@ -55,7 +53,7 @@ body {
   opacity: 1;
 }
 
-/* --- NOVÝ STYL: Fixní Kontejner (Wrapper) --- */
+/* --- Fixní Kontejner (Wrapper) --- */
 .fixed-header-wrapper {
   position: fixed;
   top: 0;
@@ -81,7 +79,6 @@ body {
   display: block;
 }
 
-/* --- General layout (POUZE PRO DETAIL STRÁNKY) --- */
 .content,
 .project-detail {
   max-width: 1400px;
@@ -92,7 +89,7 @@ body {
   padding-top: 150px;
 }
 
-/* Úpravy pro ABOUT ME */
+/* ABOUT ME */
 body.about-page .content {
   padding-top: 50px;
 }
@@ -121,10 +118,7 @@ body.about-page .content {
   transition: all 0.3s ease-in-out;
 }
 .project-card:hover img {
-  filter: 
-    /* Barva: #FF99AA (Jasnější růžová) */ drop-shadow(
-      0 0 5px #fffcfd
-    )
+  filter: drop-shadow(0 0 5px #fffcfd)
     drop-shadow(0 0 15px rgba(255, 115, 185, 0.7))
     drop-shadow(0 0 35px rgba(255, 153, 204, 0.4));
   transform: scale(1.03);
@@ -144,26 +138,18 @@ body.about-page .content {
   margin-bottom: 150px;
 }
 
-/* 1. STYLY PRO PROJEKT 2 (Speciální styly pro původní mřížku odstraněny) */
-
-/* 2. STYLY PRO PROJEKT 3/GENERAL GALLERY (Střídání řádek po řádce) */
-
-/* Izolujeme pravidla Flexboxu do project-detail */
 .project-detail .content-gallery-wrapper {
   padding-bottom: 0px;
 }
 
-/* Wrapper pro JEDEN PÁR (řádek) */
 .project-detail .content-pair-wrapper {
   display: flex;
-  /* NA MOBILU: Prvky se řadí pod sebe */
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 80px; /* Přidána mezera mezi řádky obrázků */
+  margin-bottom: 80px;
 }
 
-/* Textový a obrázkový blok: NA MOBILU ZABÍRAJÍ 100% */
 .project-detail .content-text-block {
   width: 100%;
   max-width: 100%;
@@ -176,40 +162,32 @@ body.about-page .content {
   margin-right: unset;
 }
 
-/* --- PRAVIDLO PRO DESKTOP: ŠIRŠÍ OBRAZOVKY (min-width: 900px) --- */
 @media (min-width: 900px) {
-  /* Project 3/General - Flexbox pro páry */
   .project-detail .content-pair-wrapper {
     flex-direction: row;
   }
 
-  /* VRÁCENÍ PŮVODNÍCH ŠÍŘEK (55% text / 35% obrázek) */
   .project-detail .content-text-block {
-    width: 55%; /* Původní hodnota */
-    max-width: 600px;
+    width: 55%;
   }
   .project-detail .content-image-block {
-    width: 35%; /* Původní hodnota */
+    width: 35%;
     margin-top: 0;
   }
 
-  /* NOVÉ PRAVIDLO: Zarovnání textu doprava pro druhý blok Projectu 2 */
   .content-text-block.exhibitions-right p {
     text-align: right;
   }
 
-  /* Standard Layout (Text vlevo / Obrázek vpravo) */
   .project-detail .standard-layout .content-image-block {
     margin-left: auto;
     margin-right: unset;
   }
 
-  /* Speciální CSS, které jsme přidali naposledy pro text pod obrázkem 3, aby byl zarovnaný doprava */
   .project-detail .standard-layout .content-image-block p {
     text-align: right;
   }
 
-  /* Reversed Layout (Obrázek vlevo / Text vpravo) */
   .project-detail .content-pair-wrapper.reversed-layout {
     flex-direction: row-reverse;
   }
@@ -222,8 +200,6 @@ body.about-page .content {
     margin-left: unset;
   }
 }
-
-/* Obrázky v galerii (Pro Modal/Lightbox) */
 .gallery-img {
   width: 100%;
   height: auto;
@@ -231,9 +207,8 @@ body.about-page .content {
   cursor: pointer;
   margin-bottom: 0;
 }
-/* Konec stylů pro Project 3/General Gallery */
 
-/* --- LANDING PAGE STYLY (Opravené) --- */
+/* --- LANDING PAGE STYLY --- */
 
 body.landing {
   overflow: hidden;
@@ -273,7 +248,6 @@ body.landing {
   border-color: #000000;
 }
 
-/* Styly pro Floating Images */
 .float-img {
   position: fixed;
   top: 50%;
@@ -333,41 +307,29 @@ body.landing {
   margin-top: 40px;
   margin-bottom: -140px;
 }
-/* --- OSTATNÍ SEKCIE (ABOUT ME) --- */
 
-/* 1. BIOGRAPHY (Levý blok) */
 .biography-left {
-  max-width: 650px; /* NOVÁ ŠÍŘKA pro Bio */
-  margin-right: auto; /* Zajistí zarovnání k levé straně */
+  max-width: 650px;
+  margin-right: auto;
   padding-top: 0px;
   padding-bottom: 180px;
 }
 
-/* 2. EXHIBITIONS (Pravý blok) - POUŽÍVÁ SE PRO DRUHÝ TEXT PROJEKTU 2 */
 .exhibitions-right {
-  max-width: 1000px; /* NOVÁ ŠÍŘKA pro Exhibitions */
-  margin-left: auto; /* Klíčové: Zarovná celý blok doprava */
+  max-width: 1000px;
+  margin-left: auto;
   padding-bottom: 130px;
 }
 
-/* Oprava formátování seznamu (UL) */
 .exhibitions-right ul {
   list-style-position: inside;
   padding-left: 0;
 }
 
-/* 3. AWARDS (Blok pod ostatními) */
 .awards-solo-left {
   max-width: 600px;
-
-  /* Vynutí zalomení a zabere celou šířku řádku */
   flex-basis: 100%;
-
-  /* Nastavení okrajů pro zarovnání doleva */
   margin-left: 0;
-  margin-right: auto; /* Zajistí zarovnání k levému okraji */
-
-  /* Horní mezera */
   margin-top: -40px;
 }
 
@@ -380,10 +342,7 @@ body.landing {
   transition: all 0.3s ease-in-out;
 }
 .studio-picture:hover {
-  filter: 
-    /* Barva: #FF99AA (Jasnější růžová) */ drop-shadow(
-      0 0 5px #fffcfd
-    )
+  filter: drop-shadow(0 0 5px #fffcfd)
     drop-shadow(0 0 15px rgba(255, 115, 185, 0.7))
     drop-shadow(0 0 35px rgba(255, 153, 204, 0.4));
 }
